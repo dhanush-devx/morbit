@@ -1,26 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: oklch(0.1 0.01 270);
+  --foreground: oklch(0.97 0.01 270);
+  --surface: oklch(0.16 0.025 270 / 0.88);
+  --surface-foreground: oklch(0.97 0.01 270);
+  --primary: oklch(0.78 0.19 290);
+  --primary-foreground: oklch(0.13 0.025 275);
+  --secondary: oklch(0.18 0.025 270);
+  --secondary-foreground: oklch(0.96 0.01 270);
+  --muted: oklch(0.23 0.028 270);
+  --muted-foreground: oklch(0.73 0.02 270);
+  --accent: oklch(0.24 0.05 280);
+  --accent-foreground: oklch(0.98 0.01 270);
+  --border: oklch(0.45 0.035 275 / 0.65);
+  --input: oklch(0.45 0.035 275 / 0.65);
+  --ring: oklch(0.78 0.19 290);
+  --destructive: oklch(0.65 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 25);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background); --color-foreground: var(--foreground); --color-surface: var(--surface); --color-surface-foreground: var(--surface-foreground); --color-primary: var(--primary); --color-primary-foreground: var(--primary-foreground); --color-secondary: var(--secondary); --color-secondary-foreground: var(--secondary-foreground); --color-muted: var(--muted); --color-muted-foreground: var(--muted-foreground); --color-accent: var(--accent); --color-accent-foreground: var(--accent-foreground); --color-border: var(--border); --color-input: var(--input); --color-ring: var(--ring); --color-destructive: var(--destructive); --color-destructive-foreground: var(--destructive-foreground); --font-sans: Arial, Helvetica, sans-serif; --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+body { background: var(--background); color: var(--foreground); font-family: Arial, Helvetica, sans-serif; }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+.morbit-stage { background: oklch(0.1 0.01 270); }
+.morbit-composer { overflow: hidden; border: 1px solid oklch(0.55 0.06 285 / 0.46); border-radius: 1.25rem; background: linear-gradient(145deg, oklch(0.28 0.07 285 / 0.84), oklch(0.17 0.045 265 / 0.9)); box-shadow: 0 20px 45px rgb(0 0 0 / 0.2), inset 0 1px 0 rgb(255 255 255 / 0.08); backdrop-filter: blur(18px); }
+.morbit-orb { top: 35%; left: 50%; width: min(150rem, 130vw); aspect-ratio: 1; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(ellipse at 50% 0%, oklch(0.88 0.13 290) 0%, oklch(0.72 0.21 285) 22%, oklch(0.5 0.25 280) 46%, oklch(0.2 0.1 275) 67%, transparent 71%); filter: blur(4px); opacity: 0.92; }
+.morbit-orb::after { position: absolute; inset: 5%; border-radius: inherit; background: radial-gradient(ellipse at 50% 7%, transparent 46%, oklch(0.35 0.22 280 / 0.78) 55%, transparent 69%); content: ""; }
+
+@media (max-width: 640px) { .morbit-orb { top: 44%; width: 155vw; } }
