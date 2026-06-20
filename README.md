@@ -11,3 +11,9 @@
 ![2.png](/screenshots/2.png)
 
 3. In your fork you can make all the changes you want, add code of your project, create branches, add information to `README.md` , you can change anything and everything.
+
+---
+
+# Morbit
+
+Morbit is an AI-powered smart wallet agent built on Monad Testnet. It features a client-side wallet interface that parses natural language chats into transactions (transfers, swaps, and balance checks) and executes them securely using Kernel v3 Smart Accounts with custom security policies and hooks.
